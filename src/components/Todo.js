@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 
+import classes from "./Todo.module.css"
+
 const Todo = props => {
     const [todoName, setTodoName] = useState({ firstName: "", lastName: "" });
     const [todoList, setTodoList] = useState([]);
@@ -18,6 +20,7 @@ const Todo = props => {
                 placeholder="First Name"
                 onChange={inputHandler}
                 value={todoName.firstName}
+                className={classes.todoInput}
             />
             <input
                 type="text"
@@ -25,13 +28,16 @@ const Todo = props => {
                 placeholder="Last Name"
                 onChange={inputHandler}
                 value={todoName.lastName}
+                className={classes.todoInput}
             />
             <button type="button" onClick={todoAddhandler}>Add</button>
             <ul>
-                {todoList.map((todo, index) => <li
-                    key={`${todo.firstName}_${index}`}>
-                    {todo.firstName}-{todo.lastName}
-                </li>)}
+                {todoList.map((todo, index) =>
+                    <li className={classes.todos}
+                        key={`${todo.firstName}_${index}`}
+                    >
+                        {todo.firstName}-{todo.lastName}
+                    </li>)}
             </ul>
         </React.Fragment >
     )

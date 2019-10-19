@@ -1,0 +1,9 @@
+.todoInput{
+    border: 2px solid green;
+}
+.todoInput:hover{
+    border: 2px solid red;
+}
+.todos{
+    text-decoration: underline;
+}
